@@ -1,0 +1,25 @@
+# QMAKE Configuration file
+# Copyright (c) 2007-2009, WOSH - Wide Open Smart Home 
+# by Alessandro Polo - OpenSmartHome.com
+# All rights reserved.
+#######################################################
+# Revision $Id: bundles.pro 437 2009-08-21 03:08:52Z alex $
+#######################################################
+
+unix {
+
+	message( "WOSH - BUNDLES [Devices] - VlcPlayer" )
+
+	LIBS += -lvlc
+
+	HEADERS += bundles/devices/VlcPlayer/VlcPlayer086c.h
+	SOURCES += bundles/devices/VlcPlayer/VlcPlayer086c.cpp
+
+	HEADERS += bundles/devices/VlcPlayer/VlcPlayer.h
+
+	HEADERS += bundles/devices/VlcPlayer/IVlcPlayerListener.h
+
+	HEADERS += bundles/devices/VlcPlayer/VlcPlayerBundle.h
+	SOURCES += bundles/devices/VlcPlayer/VlcPlayerBundle.cpp
+
+}

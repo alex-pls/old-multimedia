@@ -1,0 +1,4 @@
+# MultiChannelGStreamer010This software is a plug-in (Bundle) for the WOSH project (running on Linux + ALSA).Last updated on 2009-10-15.## DescriptionSimple media player based on gstreamer.
+## ScenarioBy configuring the ALSA driver properly, **it is possible to stream a different media on each real (or virtual) channel with any dolby sound-card**.I have the integrated Intel 82801I (ICH9) dolby surround card (5+1) working as 5 indipendent channels.
+See *sample .asoundrc files* for setting up ALSA virtual channels.
+## Requirements for the application* Linux, G++, QT (4.5)* gstreamer (0.10)* ALSA driver* Dolby Surround Sound Card (or any 'multi-channel' card)

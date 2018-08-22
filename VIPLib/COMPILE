@@ -1,0 +1,278 @@
+See README for general informations.
+See USE for informations about using library in your software.
+
+
+_______________________________________________________________________
+BUILDING VIPLib						BUILDING VIPLib
+
+
+  All projects share many source files, stored in ./source directory 
+  and sub-directories, headers are located in the same folder of source
+  file, ./include/VIPLib.h includes most class' headers.
+
+  Project files for Windows are located in ./lib/mvc*/,
+  Makefile for Linux is ./Makefile, default output folder is ./lib/
+  (as relative path), Windows' binaries are named as project's filename
+  with classic .lib extension, linux's Makefile writes to VIPLib.a (..i
+  don't like libVET.a), see ./lib/README for details about each built.
+
+  External libraries (required by special builts) are located in ./support
+  folder, check ./support/NOTES for more informations.
+
+
+
+ LINUX
+-=====
+
+  Compatible with most GNC C++ Compilers, make configuration is stored in
+
+	./Makefile
+
+  Execute:
+
+	make VIPLib	:	build VIPLib framework;
+				[fully MultiPlatform, only C++ Standard Lib. is required]
+
+	make v4l	:	build VIPLib framework with Video4Linux support;
+				[require v4l library]
+
+	make xvid	:	build VIPLib framework with XVID (MPEG4) support;
+				[require xvidcore library]
+
+	make quicktime	:	build VIPLib framework with quicktime (MOV) support;
+				[require quicktime4linux library]
+
+	make mpeg	:	build VIPLib framework with MPEG 1-2 support;
+				[require libmpeg3 library]
+
+	make gui	:	build VIPLib framework with GUI support;
+				[require QT, GTK library]
+	
+	make gtk	:	build VIPLib framework with GTK support;
+				[require GTK library]
+
+	make magick	:	build VIPLib framework with ImageMagicK support;
+				[require ImageMagicK library]
+
+	make big	:	build VETLIb with all available options;
+				[all external libraries are required]
+ 
+
+
+ WINDOWS
+-=======
+
+  Projects' files are available in ./lib/ folder for following environments:
+
+	o Microsoft Visual C++ 6.0		{Menu->Build->Build VIPLib}  [Obsolete]
+
+		/lib/mvc/VIPLib_base.dsw	[build minimal VIPLib framework]
+						output: VIPLib_base.lib
+
+		/lib/mvc/VIPLib_dx.dsw		[build VIPLib framework with DirectX support,
+						 require DirectX SDK 9c, see ./support/NOTES
+						 and last part of this document for details]
+						output: VIPLib_dx.lib
+
+		/lib/mvc/VIPLib_xvid.dsw	[build VIPLib framework with XVID (MPEG4) support,
+						 require xvidcore library, to build xvidcore.lib use 
+						 project ./support/xvidcore/build/win32/xvidcore.dsw]
+						output: VIPLib_xvid.lib
+
+		/lib/mvc/VIPLib_im.dsw		[build VIPLib framework with ImageMagick support,
+						 require imagemagick library, to build follow READMEs
+						 and add include folder to MVS]
+						output: VIPLib_im.lib
+
+		/lib/mvc/VIPLib_full.dsw	[build FULL VIPLib framework, require all listed..]
+						output: VIPLib.lib, VIPLib_full.lib
+
+
+	o Microsoft Visual C++ 7.0 (.NET)	[ALPHA PROJECT]
+
+		/lib/mvc7/VIPLib_full.vcproj	[build complete VIPLib framework]
+						output: VIPLib.lib
+
+		/lib/mvc7/VIPLib_base.vcproj	[build base VIPLib framework]
+						output: VIPLib_base.lib
+
+
+	o Microsoft Visual C++ 8.0 (2005)	[Updated]
+
+		/lib/mvc8/VIPLib_full.sln	[build complete VIPLib framework]
+						output: VIPLib.lib
+
+		/lib/mvc8/VIPLib_base.sln	[build base VIPLib framework]
+						output: VIPLib_base_vc8_debug.lib   [DEBUG]
+						 -or-   VIPLib_base_vc8_release.lib [RELEASE]
+
+
+
+_______________________________________________________________________
+EXTERNAL LIBRARIES				     EXTERNAL LIBRARIES
+
+
+  In ./support/ folder are located all required libraries for VIPLib, standard 
+  framework uses only C++ standard library and it's fully multi-platform (ANSI C++).
+
+  When building with MPEG, MOV, XVID or DirectX support, VIPLib needs some
+  external libraries, they may be unavailable for some systems and they
+  probably need to be installed or built on your system.
+
+  ./support/NOTES report some nice tips and known bugs for installing libraries,
+  you should read it.
+
+  You may download libraries package from VIPLib website or (better) download
+  each library from its updated homepage and install on your system,
+  read file ./support/NOTES before proceeding.
+
+  Current External Libraries:
+
+
+	o ccvt				Multi-Platform
+					required in ./source/vetUtility.cpp
+
+	o qt				Multi-Platform
+	  				required in ./source/outputs/vetWindowQT.cpp
+
+	o gtk				Multi-Platform
+	  				required in ./source/outputs/vetWindowGTK.cpp
+
+	o imagemagick			Multi-Platform
+	  				required in ./source/coders/vetCodec_IMG.cpp
+
+	o libmpeg3 [1.5.4-i686]		Linux only
+	  				required in ./source/coders/vetCodec_MPEG.cpp
+
+	o quicktime4linux [1.4]		Linux only
+	  				required in ./source/coders/vetCodec_MOV.cpp
+
+	o xvidcore [1.1.0beta2-i686]	Linux and Windows32
+	  				required in ./source/coders/vetCodec_XVID.cpp
+
+	o DirectX 9c [before 10.0]	Window32 + DirectX runtime
+	  				required in ./source/inputs/vetDirectXInput.cpp
+	  				            ./source/inputs/vetDirectXInput2.cpp
+
+
+ LINUX
+-=====
+
+
+	o v4l		:	Install:	- Usually Included by system
+				Home:		http://www.exploits.org/v4l
+
+	o xvidcore	:	Install:	./support/xvidcore/doc/install (or package)
+				Home:		http://www.xvid.org
+				Parameters:	-L/usr/lib/ -lxvidcore
+
+	o quicktime	:	Build:		./support/quicktime4linux/docs/index.html
+				Home:		http://www.heroinewarrior.com/quicktime4linux
+				Parameters:	-lpthread -lpng -ldl -lz -lglib -L../support/quicktime4linux/i686 -lquicktime
+	
+	o libmpeg3	:	Install: 	Default library installation tecnique (build or package)
+				Home:		http://www.heroinewarrior.com/libmpeg3
+				Parameters:	-lpthread -lmpeg3
+	
+	o qt		:	Install: 	Usually installed
+				Home:		http://www.trolltech.com
+				Parameters:	-L/usr/lib/qt/lib -lqt-mt
+
+	o gtk		:	Install: 	Usually installed
+				Home:		http://www.gtk.org
+				Parameters:	`pkg-config --cflags --libs gtk+-2.0`
+
+	o imagemagick	:	Install:	Default library installation tecnique (build or package)
+				Home:		http://www.imagemagick.org/
+				Parameters:	-L/usr/local/lib -L/usr/X11R6/lib -L/lib/graphviz -lfreetype -lz -L/usr/lib -lMagick -llcms -ltiff -lfreetype -ljpeg -lpng -ldpstk -ldps -lXext -lXt -lSM -lICE -lX11 -lbz2 -lxml2 -lz -lpthread -lm -lpthread
+
+
+ WINDOWS
+-=======
+
+	o DirectX	:	Install:	SDK installation, update include and library
+						in your compiler / RAD development system.
+				Home:		http://www.microsoft.com/directx
+				Link:		./support/directx/amstrmid.lib, strmbasd.lib, dbghelp.lib
+				Note:		DirectX is NOT compatible with Borland Compilers (COFF<->OMF).
+
+
+	o xvid		:	Build:		With Visual Studio, read ./support/NOTES,
+						build static library (.lib)
+				Home:		http://www.xvid.org
+				Link:		./support/xvidcore/build/win32/bin/libxvidcore.lib
+
+	o imagemagick	:	Build:		With Visual Studio, read ./support/NOTES,
+						build static library (.lib)
+				Home:		http://www.imagemagick.org/
+				Link:		./support/ImageMagick/VisualMagick/lib/*.*
+
+
+
+_______________________________________________________________________
+COMPILING TESTS						COMPILING TESTS
+
+
+  All projects share same source files, stored in /tests directory, named
+  /test_<ClassName>.cpp, where <ClassName> is VIPLib class to test.
+
+
+ LINUX
+-=====
+
+  Compatible with most GNC C++ Compilers, make configuration is stored in
+
+	./tests/Makefile
+
+  Execute:
+
+	./tests/make all		:	build all tests;
+	./tests/make <ClassName>	:	build selected test;
+
+	./tests/make help		:	show available tests;
+	./tests/make clean		:	clean output files and objects;
+
+
+  Reference to VIPLib static library (VIPLib.a) is at "../lib/VIPLib.a",
+  some tests may need special VIPLib built (MPEG, MOV, XVID, V4L support):
+
+
+	./tests/test_vetQWindow.cpp		Show how to use QWindow class
+	./tests/test_vetCodec_XVID.cpp		Show how to use vetCodec_XVID class
+	./tests/test_vetCodec_MOV.cpp		Show how to use vetCodec_MOV class
+	./tests/test_vetCodec_MPEG.cpp		Show how to use vetCodec_MPEG class
+
+	./tests/app_vetVideo4LinuxPlayer.cpp	Play /dev/video0 stream to a window
+	./tests/app_vetLinuxMOVPlayer.cpp	Play a QuickTime movie in a window
+	./tests/app_vetLinuxMPEGPlayer.cpp	Play a MPEG1-2 movie in a window (QT)
+	./tests/app_vetLinuxMPEGPlayerGTK.cpp	Play a MPEG1-2 movie in a window (GTK)
+	./tests/app_vetLinuxXVIDPlayer.cpp	Play a MPEG4 movie in a window
+
+
+
+
+ WINDOWS
+-=======
+
+  Built project for
+
+	o Microsoft Visual C++ 6.0 (or later)
+
+		./tests/mvc/test_<ClassName>.dsw
+
+		{Menu->Build->Execute test_<ClassName>.vc6.exe}
+
+
+  Following tests need DirectX SDK Library (9c, not version 10)
+
+	./tests/app_vetDirectXLamePlayer.cpp	Play first capture device in a window
+
+
+  Reference to VIPLib static library is at   ./lib/VIPLib_vc6.lib for MVC.
+
+  Object and temp files are stored in ./tests/tmp folder, output binaries are
+  moved to ./tests/bin/. 
+ 
+  To build VIPLib WorkShop, Package Studio or Distribution Manager you need Visual
+  Studio 7.0 (.NET) and the full library binary for Windows (./lib/VIPLib.lib),
+  see README document in application's folder for details.

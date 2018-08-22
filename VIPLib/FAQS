@@ -1,0 +1,79 @@
+See README for general informations.
+See USE for informations about using library in your software.
+
+
+_______________________________________________________________________
+VIPLib FAQs						    VIPLib FAQs
+
+
+ An HTML version of this document is available online at
+ 
+	http://mmlab.disi.unitn.it/projects/VIPLib/docs/viplib.faqs.html
+
+
+
+
+ Frequenlty Asked Questions
+-==========================
+ 
+ 
+   _______________________________________________________________________________
+  |o
+  |	What should I download?
+  |	
+  |_______________________________________________________________________________
+  |
+    	You should download and compile the source code from the SVN repository
+     	and as installation package for windows (.MSI),
+     	
+     	If you are going to extend VIPLib with a filter, a codec or any component,
+     	you should download (as always) the SDK archive and Package Studio.
+  |
+  \_______________________________________________________________________________
+
+
+ 
+ 
+   _______________________________________________________________________________
+  |o
+  |	I just want to use DirectX / Video4Linux component to capture data
+  |	for my application, ..without reading manuals :P
+  |_______________________________________________________________________________
+  |
+    	Easy, with a text pad open one of these components (or all):
+	
+		./source/inputs/vipDirectXInput.h
+		./source/inputs/vipDirectXInput2.h
+		./source/inputs/vipVideo4Linux.h
+	
+	and their own test files:
+	
+		./tests/test_vipDirectXInput.cpp
+		./tests/test_vipDirectXInput2.cpp
+		./tests/test_vipVideo4Linux.cpp
+
+	but you are probably more interested in these simple "applications":
+
+		./tests/app_vipDirectXLamePlayer.cpp
+		./tests/app_vipVideo4LinuxPlayer.cpp
+
+	check them out, code is often commented and quite simple, you may take
+	a look to tests' project files for building your own (or just edit them):
+	
+		./tests
+
+	for more information check ./USE.
+  |
+  \_______________________________________________________________________________
+
+
+   _______________________________________________________________________________
+  |o
+  |	May I join the project?
+  |	
+  |_______________________________________________________________________________
+  |
+    	Sure! You help is welcome, please first check ./TODO, then contact us.
+  |
+  \_______________________________________________________________________________
+

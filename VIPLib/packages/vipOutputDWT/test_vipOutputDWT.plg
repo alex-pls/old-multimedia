@@ -1,0 +1,39 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: test_vipOutputDWT - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\nicola\IMPOST~1\Temp\RSP9.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /FR"Debug/" /Fp"Debug/test_vipOutputDWT.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\VIPWORK\VipLib\trunk\packages\vipOutputDWT\test_vipOutputDWT.cpp"
+"C:\VIPWORK\VipLib\trunk\packages\vipOutputDWT\vipOutputDWT.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\nicola\IMPOST~1\Temp\RSP9.tmp" 
+Creating temporary file "C:\DOCUME~1\nicola\IMPOST~1\Temp\RSPA.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/test_vipOutputDWT.vc6.pdb" /debug /machine:I386 /out:"..\bin\test_vipOutputDWT.vc6.exe" /pdbtype:sept 
+.\Debug\test_vipOutputDWT.obj
+.\Debug\vipOutputDWT.obj
+..\..\lib\VIPLib_base_vc6_debug.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\nicola\IMPOST~1\Temp\RSPA.tmp"
+<h3>Output Window</h3>
+Compiling...
+test_vipOutputDWT.cpp
+vipOutputDWT.cpp
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/test_vipOutputDWT.bsc"  .\Debug\test_vipOutputDWT.sbr .\Debug\vipOutputDWT.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+test_vipOutputDWT.vc6.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

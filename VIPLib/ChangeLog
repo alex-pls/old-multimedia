@@ -1,0 +1,86 @@
+See README for general informations.
+
+
+_______________________________________________________________________
+VIPLib CHANGELOG				       VIPLib CHANGELOG
+
+ Here is the full list of updates for each built:
+
+ NOTE:	"!" means that has been cut backward compatibility on that item,
+ 	if your contest includes it, please see details in header
+ 	file before upgrading your implementation.
+
+
+version 1.1.2
+-=============
+ !o Removed Borland suport
+  o Removed binary files from repository. Build is required for users.
+  o Various fixes and cleanups
+  
+
+ version 1.1.1
+-=============
+ !o Removed some old color conversion procedures
+  o Added vipFilterEdge (Sobel, fast Sobel, Canny)
+  o Hosting moved to http://mmlab.disi.unitn.it/projects/VIPLib/
+  o Various fixes and cleanups
+ 	
+ 	
+ version 1.1
+-===========
+ !o Removed items: Tools/*, WebSite/* 
+  o Released vetCodec_RAW (read/Write YUV video)
+  o Hosting moved to http://mmlab.science.unitn.it/projects/VIPLib/
+  o Anonymous SVN Repository at svn://enricoviii.science.unitn.it/VIPLib/
+
+
+ version 1.0.2.25	First Official Release [OnLine]
+-===============
+ !o Updated Base Interfaces (vetFilter buffering reviewed)
+ !o Updated Package Starter Kit (software: Package Studio 0.3)
+ !o Upgraded VIPLib WorkShop to version 0.7.256
+ !o Upgraded PlugIn System (of WorkShop) to version 1 revision 3
+  o Released some plugins (included in WS distribution package)
+  o Released VIPLib Presentation [ITALIAN]
+  o Released VIPLib Manual [ITALIAN]
+  o Updated WebSite (./Website/)
+
+
+ version 1.0.1.5
+-===============
+ !o Updated Base Interfaces
+ !o Updated Base Frames { vetFrame, vetFrameRGB24, vetFrameRGB32, vetFrameYUV420, vetFrameT }
+  o Added VIPLib WorkShop 0.5.101 (./Tools/vetWS/vetws3.exe)
+  o Added new Module: vetDirectXInput2
+  o Updated WebSite (./Website/)
+  o Updated Doxygen configuration file
+  o Updated READMEs files
+
+
+ version 1.0.1.4
+-===============
+  o Added VIPLib Distribution Manager (./Tools/vetDM/vetdistr.exe)
+  o Added VIPLib Package Starter Kit (./packages)
+    [include software for Win32 and templates for developers: Package Studio]
+
+
+ version 1.0.1.3
+-===============
+  o Added vetVision Modules (./source/vision)
+  o Added vetException class
+
+
+ version 1.0.1.2
+-===============
+  o Added ImageMagick support (vetCodec_IMG)
+
+
+ version 1.0.1.0
+-===============
+  o Added MPEG4-XVID support (vetCodec_XVID)
+  o Added MPEG1-2 support (vetCodec_MPEG)
+
+
+ version 1.0.0.0
+-===============
+  o Beta Release

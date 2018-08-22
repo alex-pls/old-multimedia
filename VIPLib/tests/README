@@ -1,0 +1,35 @@
+See ../README for general informations.
+See ../USE for informations about tests, samples and how to use VIPLib.
+See ../COMPILE for building informations.
+
+
+_______________________________________________________________________
+VIPLib SAMPLES						 VIPLib SAMPLES
+
+  Projects and Makefile refer to (it also means require) components'
+  headers in ./source and static library in ../lib.
+
+  Output binaries are stored in ./tests/bin folder, temporary objects
+  will be written in ./tests/tmp/.
+
+
+
+
+ LINUX
+-=====
+
+  VIPLib Binary is required: ../lib/VIPLib.a
+  In general to build th test use for example:
+  g++ ./test_vipCodec_RAW.cpp ../lib/VIPLib.a -o ./test_vipCodec_RAW.out
+  
+  External libraries may be required for some tests, like the QT examples.
+
+
+
+ WINDOWS
+-=======
+
+  VIPLib Binary is required: ../../lib/VIPLib.lib (full)
+  No external libraries are required (full built include them all).
+  Project are available for Microsoft Visual Studio 6.0 in ./tests/mvc.
+

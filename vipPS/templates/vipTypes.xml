@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<!-- comment -->
+
+
+<vipTypes>
+
+	<vipClassType>
+		<classID value="0" />
+		<friendlyName value="Base class (empty)" />
+		<interfaceFileName value="" />
+		<classPrefix value="vip" />
+		<implementationsDirName value="" />
+		<templateFileName value="" />
+		<comment>
+		</comment>
+	</vipClassType>
+
+	<vipClassType>
+		<classID value="2000" />
+		<friendlyName value="Buffer" />
+		<interfaceFileName value="vipBuffer" />
+		<classPrefix value="vipBuffer" />
+		<implementationsDirName value="buffers" />
+		<templateFileName value="vipBufferTemplate" />
+		<comment>
+		</comment>
+	</vipClassType>
+
+	<vipClassType>
+		<classID value="3200" />
+		<friendlyName value="(De)Coders" />
+		<interfaceFileName value="vipCodec" />
+		<classPrefix value="vipCodec_" />
+		<implementationsDirName value="codecs" />
+		<templateFileName value="vipCodec_Template" />
+		<comment>
+		</comment>
+	</vipClassType>
+
+	<vipClassType>
+		<classID value="7000" />
+		<friendlyName value="Filters" />
+		<interfaceFileName value="vipFilter" />
+		<classPrefix value="vipFilter" />
+		<implementationsDirName value="filters" />
+		<templateFileName value="vipFilterTemplate" />
+		<comment>
+		</comment>
+	</vipClassType>
+
+	<vipClassType>
+		<classID value="4000" />
+		<friendlyName value="Data Sources" />
+		<interfaceFileName value="vipInput" />
+		<classPrefix value="vipInput" />
+		<implementationsDirName value="inputs" />
+		<templateFileName value="vipInputTemplate" />
+		<comment>
+		</comment>
+	</vipClassType>
+
+	<vipClassType>
+		<classID value="8000" />
+		<friendlyName value="Output component" />
+		<interfaceFileName value="vipOutput" />
+		<classPrefix value="vipOutput" />
+		<implementationsDirName value="outputs" />
+		<templateFileName value="vipOutputTemplate" />
+		<comment>
+		</comment>
+	</vipClassType>
+
+	<vipClassType>
+		<classID value="6400" />
+		<friendlyName value="Computer Vision/Motion Det. (Output comp.)" />
+		<interfaceFileName value="vipVision" />
+		<classPrefix value="vip" />
+		<implementationsDirName value="vision" />
+		<templateFileName value="vipVisionTemplate" />
+		<comment>
+		</comment>
+	</vipClassType>
+
+	<vipClassType>
+		<classID value="1000" />
+		<friendlyName value="Frame Object" />
+		<interfaceFileName value="vipFrame" />
+		<classPrefix value="vipFrame" />
+		<implementationsDirName value="" />
+		<templateFileName value="vipFrameTemplate" />
+		<comment>
+		</comment>
+	</vipClassType>
+
+	<vipClassType>
+		<classID value="10" />
+		<friendlyName value="general Object" />
+		<interfaceFileName value="vipObject" />
+		<classPrefix value="vip" />
+		<implementationsDirName value="" />
+		<templateFileName value="vipObjectTemplate" />
+		<comment>
+		</comment>
+	</vipClassType>
+
+		
+</vipTypes>
+

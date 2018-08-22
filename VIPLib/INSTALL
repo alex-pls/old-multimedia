@@ -1,0 +1,33 @@
+
+	INSTALLATION TIPS FOR VIPLIB
+====================================
+
+
+ Connect to VIPLib SVN repository and checkout,
+ you will be sure to have last version of VIPLib.
+    [ svn://mmlab.science.unitn.it/VIPLib ]
+
+
+ Please read ./COMPILE for more informations, or have a look to VIPLib website 
+
+
+Windows
+=======
+
+  Since it would take long, we decided to remove the binaries from the website. All users
+  are requested to download the library from the repository and compile the MSVC workspace/solution
+
+
+
+Linux
+=====
+
+  Required components may be installed easily on new distributions:
+
+	o  apt-get install build-essential
+	
+	o  apt-get install libqt4-gui *
+	   apt-get install libqt4-dev *
+
+
+  * There are some problems on new releases, we are working to fix them.

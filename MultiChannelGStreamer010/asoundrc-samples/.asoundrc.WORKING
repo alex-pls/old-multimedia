@@ -1,0 +1,96 @@
+
+pcm.snd_card {
+     type hw
+     card 0 # change to your cards number or name
+}
+
+
+# 6 channel dmix:
+pcm.dmix6 {
+     type dmix
+        ipc_key 1024
+        ipc_key_add_uid false # let multiple users share
+        ipc_perm 0660 # IPC permissions (octal, default 0600)
+        slave {
+                pcm snd_card # see below
+                rate 48000
+                channels 6
+                period_time 0
+                period_size 1024 # try 2048 against skipping
+                buffer_time 0
+                buffer_size 5120 # in case of problems reduce this
+                                 # in case of skipping, try increasing
+        }
+     }
+
+
+
+
+# 6 channel dmix:
+pcm.dmix62 {
+     type dmix
+        ipc_key 1024
+        ipc_key_add_uid false # let multiple users share
+        ipc_perm 0660 # IPC permissions (octal, default 0600)
+        slave {
+                pcm snd_card # see below
+                rate 48000
+                channels 6
+                period_time 0
+                period_size 1024 # try 2048 against skipping
+                buffer_time 0
+                buffer_size 5120 # in case of problems reduce this
+                                 # in case of skipping, try increasing
+        }
+     }
+
+
+
+#####
+
+pcm.r_mute4 {
+  type route
+  slave.pcm dmix6
+  slave.channels 6
+
+  ttable {
+    0.0= 1
+    1.1= 0
+    2.2= 0
+    3.3= 0
+    4.4= 0
+    5.5= 0
+  }
+}
+
+pcm.r_play4 {
+  type route
+  slave.pcm dmix62
+  slave.channels 6
+
+  ttable {
+    0.0= 0
+    1.1= 1
+    2.2= 0
+    3.3= 0
+    4.4= 0
+    5.5= 0
+  }
+}
+
+
+
+######
+
+
+pcm.play4 {
+     type asym
+     playback.pcm "r_play4" # upmix first
+}
+
+
+pcm.mute4 {
+     type asym
+     playback.pcm "r_mute4" # upmix first
+}
+

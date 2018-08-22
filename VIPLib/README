@@ -1,0 +1,114 @@
+
+    .-.                          V I P L i b                          .-.
+   /   \           .-.                                 .-.           /   \
+  /     \         /   \       .-.     _     .-.       /   \         /     \
+-/-------\-------/-----\-----/---\---/-\---/---\-----/-----\-------/-------\--
+          \     /       \   /     `-'   `-'     \   /       \     /
+           \   /         `-'                     `-'         \   /
+            `-'                                               `-'
+                   Video & Image Processing LIBrary 
+                                                                       Version 
+                                                              1.1.9-i686-32bit
+                                                                    18/05/2006
+
+
+ Coding Language:	ANSI C++ (ISO/IEC 14882:2003)
+ Category	:	Video & Image Processing FrameWork
+ Platform	:	*NIX, WIN32
+ License	:	Open source, GPL
+ Founder	:	Alessandro Polo
+ HomePage	:	http://mmlab.disi.unitn.it/projects/VIPLib/
+ ZIP Archive	:	http://mmlab.disi.unitn.it/resources/distribution/VIPLib/VIPLib.zip
+ SVN Repository :	svn://mmlab.disi.unitn.it/VIPLib/trunk/
+
+ Star(t) date	:	13/06/2005
+ Last Update	:	18/05/2006
+______________________________________________________________________________
+******************************************************************************
+
+
+
+ What is it?
+-===========
+
+  Video Processing C++ Library, designed for testing and developing
+  filters, (de)coders.
+
+  VIPLib basic built is fully compatible with Windows and NIX operative systems,
+  some special builts (not available on all platforms) require external libraries
+  such as v4l, qt, gtk, DirectX.
+
+  VIPLib implements many tools for Video processing, to ease the testing phase of your algorithm.
+
+
+
+ More informations
+-=================
+
+  Project's documentation is available in HTML and other formats in ./docs directory.
+  Frequenlty Asked Questions are listed in ./FAQS document, VIPLib developers
+  are named in ./AUTHORS.
+
+  An updated version of this document (and all distribution) is available online.
+
+
+
+ Under Linux
+-===========
+
+  Library and new packages are currently compiled with GNU C++ Compiler 3.3.4 or later.
+  Special builts supported on Linux:
+
+	o V4L		[require video4linux library installed]
+	o QT (GUI)	[require Trolltech QT library installed]
+	o GTK (GUI)	[require GTK library installed]
+
+
+
+ Under Windows
+-=============
+
+  Library and new packages are currently compiled with Visual C++ 6.0 or higher.
+  Special builts supported on Windows:
+
+	o DirectX	[require* DirectX SDK]
+
+
+
+
+ Using
+-=====
+
+  Binaries (all) are stored in ./lib folder, read ./lib/README document
+  for informations about each built (and its content).
+  
+  Read ./USE for informations about using VIPLib in your applications.
+  Check Tests and Samples applications in ./tests folder.
+
+ Compiling
+-=========
+
+  Read COMPILE for indepth informations;
+
+
+
+ Extending
+-=========
+
+  VIPLib is very modular, it's quite easy for developers to add new packages 
+  or extend existing packages.
+
+  Developers interested in extending library should read ./EXTEND document and
+  use Package Studio (available at mmLab), this tool creates base
+  source and project files (available for Windows systems only).
+
+  Read ./TODO if you wish join VIPLib project;
+  Read ./BUGS for well know bugs and problems list;
+
+
+
+ License
+-=======
+
+  GNU General Public License, read ./LICENSE for more informations.
+

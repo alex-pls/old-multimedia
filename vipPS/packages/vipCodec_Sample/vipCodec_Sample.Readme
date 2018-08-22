@@ -1,0 +1,97 @@
+#vipCodec_Sample
+@1.0
+
+Package Informations Informations
+=================================
+
+ Package Name:		vipCodec_Sample
+ Package Type:		%VIPTYPE%
+ Package Author(s):	Alessandro Polo
+
+ Coding Language:	ANSI C++ (ISO/IEC 14882:2003)
+ Platform:		*NIX, WIN32
+ License:		Open source, GPL
+
+ Star(t) date:		19/05/2006 7.25.22
+ Last Update:		19/05/2006 7.25.22
+
+_____________________________________________________________
+*************************************************************
+
+
+
+ What is it?
+-===========
+
+  .
+
+
+
+ More informations
+-=================
+
+  .
+
+
+
+ Under Linux
+-===========
+
+  .
+
+
+
+ Under Windows
+-=============
+
+  .
+
+
+
+ BUGs and Problems
+-=================
+
+  .
+
+
+
+ ToDo
+-====
+
+  .
+
+
+ License
+-=======
+
+  See document vipCodec_Sample.License
+
+
+ Contact
+-=======
+
+  Questions, Comments and Tips to %AUTHORMAIL%
+  
+  
+  
+
+
+
+
+_______________________________________________________________
+***************************************************************
+ This document has been built with VIPLib Package Studio 0.9.12
+
+
+FrameWork Informations
+======================
+
+ WebSite:		http://mmlab.science.unitn.it/
+ Coding Language:	ANSI C++ (ISO/IEC 14882:2003)
+ Category:		Video & Image Processing
+ Platform:		*NIX, WIN32
+ License:		Open source, GPL
+ 
+_______________________________________________________________
+***************************************************************
+

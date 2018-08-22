@@ -1,0 +1,97 @@
+#%CLASSNAME%
+@%VERSION%
+
+Package Informations Informations
+=================================
+
+ Package Name:		%CLASSNAME%
+ Package Type:		%VIPTYPE%
+ Package Author(s):	%AUTHOR%
+
+ Coding Language:	ANSI C++ (ISO/IEC 14882:2003)
+ Platform:		*NIX, WIN32
+ License:		Open source, GPL
+
+ Star(t) date:		%TODAY%
+ Last Update:		%TODAY%
+
+_____________________________________________________________
+*************************************************************
+
+
+
+ What is it?
+-===========
+
+  .
+
+
+
+ More informations
+-=================
+
+  .
+
+
+
+ Under Linux
+-===========
+
+  .
+
+
+
+ Under Windows
+-=============
+
+  .
+
+
+
+ BUGs and Problems
+-=================
+
+  .
+
+
+
+ ToDo
+-====
+
+  .
+
+
+ License
+-=======
+
+  See document %CLASSNAME%.License
+
+
+ Contact
+-=======
+
+  Questions, Comments and Tips to %AUTHORMAIL%
+  
+  
+  
+
+
+
+
+_______________________________________________________________
+***************************************************************
+ This document has been built with VIPLib Package Studio 0.9.12
+
+
+FrameWork Informations
+======================
+
+ WebSite:		http://mmlab.science.unitn.it/
+ Coding Language:	ANSI C++ (ISO/IEC 14882:2003)
+ Category:		Video & Image Processing
+ Platform:		*NIX, WIN32
+ License:		Open source, GPL
+ 
+_______________________________________________________________
+***************************************************************
+

@@ -1,0 +1,16 @@
+; ws_plugin_exp.def ...
+
+EXPORTS
+
+	constructInstance PRIVATE
+	destructInstance PRIVATE
+	__callback_function PRIVATE
+	__callback_function_list_count PRIVATE
+	__callback_function_list_info PRIVATE
+	openSetupDialog PRIVATE
+	getVETPlugInInternalName PRIVATE
+	getVETPlugInFullName PRIVATE
+	getVETPlugInClassType PRIVATE
+	getVETPlugInSystemVersion PRIVATE
+	getVETPlugInSystemRevision PRIVATE
+	DllGetVersion PRIVATE

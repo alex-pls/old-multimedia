@@ -1,0 +1,97 @@
+#vipFilterSplitMerge
+@0.1
+
+Package Informations Informations
+=================================
+
+ Package Name:		vipFilterSplitMerge
+ Package Type:		%VIPTYPE%
+ Package Author(s):	Marco Verza - Manuel Di Toma
+
+ Coding Language:	ANSI C++ (ISO/IEC 14882:2003)
+ Platform:		*NIX, WIN32
+ License:		Open source, GPL
+
+ Star(t) date:		29/09/2006 12.42.06
+ Last Update:		29/09/2006 12.42.06
+
+_____________________________________________________________
+*************************************************************
+
+
+
+ What is it?
+-===========
+
+  .
+
+
+
+ More informations
+-=================
+
+  .
+
+
+
+ Under Linux
+-===========
+
+  .
+
+
+
+ Under Windows
+-=============
+
+  .
+
+
+
+ BUGs and Problems
+-=================
+
+  .
+
+
+
+ ToDo
+-====
+
+  .
+
+
+ License
+-=======
+
+  See document vipFilterSplitMerge.License
+
+
+ Contact
+-=======
+
+  Questions, Comments and Tips to %AUTHORMAIL%
+  
+  
+  
+
+
+
+
+_______________________________________________________________
+***************************************************************
+ This document has been built with VIPLib Package Studio 0.9.12
+
+
+FrameWork Informations
+======================
+
+ WebSite:		http://mmlab.science.unitn.it/
+ Coding Language:	ANSI C++ (ISO/IEC 14882:2003)
+ Category:		Video & Image Processing
+ Platform:		*NIX, WIN32
+ License:		Open source, GPL
+ 
+_______________________________________________________________
+***************************************************************
+

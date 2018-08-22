@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+
+<title>VIPLib Package Studio - Free Open Source VIPLib package generator - mmLab - DIT - Trento</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="Content-Language" content="EN" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="author" content="alessandro.polo@ewgate.net" />
+<meta name="copyright" content="Alessandro Polo" />
+<meta name="robots" content="all" />
+
+
+</head>
+
+<body>
+
+
+
+
+			<p>This section is under construction.</p>
+
+			<h3>RELATED DOCUMENTS<a name="documents">&nbsp;</a></h3>
+			<p>Package Studio not well documented jet, some informations are available in following plain text files:</p>
+			<ul>
+				<li><a href="/svn/vipPS/trunk/README" target="_blank">ReadMe</a></li>
+				<li><a href="/svn/vipPS/trunk/ChangeLog.txt" target="_blank">ChangeLog.txt</a></li>
+				<li><a href="/svn/vipPS/trunk/ToDo" target="_blank">ToDo</a></li>
+			</ul>
+			<p>Installation process shows this <a href="/svn/vipPS/trunk/reference/vipPS.rtf" target="_blank">short presentation</a> (RTF format).</p>
+
+
+			<h3>PACKAGE DEVELOPMENT<a name="developers">&nbsp;</a></h3>
+			<p>If you plan to extend VIPLib with new packages (alias components) read <a href="/svn/VIPLib/trunk/EXTEND" title="" target="_blank">./EXTEND</a> document.</p>
+			<p>Please check <a href="/svn/vipPS/trunk/packages/NAMESPACE" title="" target="_blank">this list</a> before choosing a PackageName (Class name).</p>
+			<p>You will probably need to download following archives:</p>
+			<ul>
+
+				<li><a href="#" title="" target="_blank">VIPLib Binary(ies) for your system(s)</a></li>
+				<li><a href="#" title="" target="_blank">Optionally (better) VIPLib SDK</a></li>
+				<li><a href="#" title="" target="_self">VIPLib Package Starter Kit (PSK)</a></li>
+				<li><a href="#" title="" target="_self">VIPLib Package Studio</a></li>
+			</ul>
+			<p>A standard package includes following items:</p>
+			<ul>
+				<li>&lt;className&gt;.h	(Dichirazione della classe)</li>
+				<li>&lt;className&gt;.cpp (Implementazione della classe)</li>
+				<li>test_&lt;className&gt;.cpp (File sorgente contentente il metodo main del progetto)</li>
+				<li>Makefile (File di configurazione dell’utility Make)</li>
+				<li>test_&lt;className&gt;.bpr (File del progetto per Borland C++ Builder 6.0)</li>
+				<li>test_&lt;className&gt;.dsp (File di progetto per Microsoft Visual Studio 6.0)</li>
+				<li>test_&lt;className&gt;.dsw (File del Workspace per il progetto con Visual Studio)</li>
+				<li>&lt;className&gt;.License (Licenza del progetto)</li>
+				<li>&lt;className&gt;.Readme (Informazioni sul progetto)</li>
+			</ul>
+			<p>Please keep all source code in ONE file (<i>vet&lt;ClassName&gt;.cpp</i>) and all classes useful for users in header <i>vet&lt;ClassName&gt;.h</i> (for example a filter includes also the <i>vet&lt;ClassName&gt;Parameters</i> class).</p>
+			<p>Follow conventions and write clear code (C++ style), develope your module in directory ./packages/&lt;className&gt;.</p>
+			<p>Most functions that return a state value, such as extractTo(..) or importFrom(..), must use the type VETRESULT, defined as an integer in <a href="/svn/VIPLib/trunk/source/vipDefs.h" target="_blank">vetDefs.h</a>, return codes convention is 0=OK, error else.</p>
+
+
+
+
+
+			<p class="ilink"><a href="#top">Top^</a></p>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,128 @@
+See README for general informations.
+See COMPILE for building informations.
+See TODO for packages' ideas.
+
+_______________________________________________________________________
+EXTEND VIPLib						  EXTEND VIPLib
+
+
+  Extending library means to develop a standard VIPLib component, it
+  is NOT required to build library on your platform, you may use static
+  binaries but you should already know how to use VIPLib, first read ./USE.
+
+
+
+ Requirements
+-============
+
+  You will need following items to code a VIPLib component:
+  
+  	./lib/{..} 		Static library binary for your platform
+  				(ex. VIPLib.lib or VIPLib.a)
+
+	./source/*.h		Headers are required by source code.
+
+
+
+ SDK
+-===
+
+  VIPLib-SDK is an archive designed for extending VIPLib, it includes
+  readmes, headers and binaries for Windows and Linux systems both.
+
+
+
+ Conventions
+-===========
+
+	o	Name header and source files as classname (Java like).
+		Class Name must be formatted as follow: <prefix><ClassName>,
+		where prefix is the name of base interface, examples:
+
+			vipFilter	->	vipFilterGeometric
+			vipCodec	->	vipCodec_BMP
+	
+	o	Check ./templates/NAMESPACE in Package Studio root
+		and choose a valid classname.
+
+	o	Develope your module in directory ./packages/<className>
+
+	o	Most functions that return a state value, such as extractTo(..)
+		or importFrom(..), must use the type VIPRESULT, defined as an
+		integer in vipDefs.h, return codes convention is 0<->OK, error else.
+
+	o	Filters should implement a parameters class (vip<className>Parameters)
+		that serialize filter in XML format.
+
+
+
+ Package Development
+-===================
+
+  A standard VIPLib package contains following files:
+
+  	vip<ClassName>.h		Class Header
+  	vip<ClassName>.cpp		Class Source
+  	test_vip<ClassName>.cpp		Test source [int main()]
+
+  	Makefile			Make configuration file
+	test_vip<ClassName>.dsp		Microsoft Visual Studio 6.0 project file
+  	test_vip<ClassName>.dsw		Microsoft Visual Studio 6.0 Workspace file
+
+  	vip<ClassName>.Readme		Readme of the component
+  	vip<ClassName>.License		License of the component
+
+  Please keep all source code in ONE file (vip<ClassName>.cpp) and all classes
+  useful for users in header vip<ClassName>.h (for example a filter includes also
+  the vip<ClassName>Parameters class).
+  
+
+
+ Notes
+-=====
+
+  If you plan to extend library you should be able to built it, read COMPILE for
+  more informations, anyway default configuration uses static library binaries.
+
+  Then respect following conventions and tips:
+
+	o	If you are going to (re)implement streaming operators, remember that
+		you need to redefine all (streaming) operators, also the old ones.
+		Example:
+
+			To add >> vipFrameRGB96 support you have to define
+
+				void operator << (vipFrameRGB& img) { importFrom(img); };
+
+			and related
+
+				vipRESULT importFrom(vipFrameRGB96& img);
+
+			but you must also REdefine:
+
+				void operator << (vipFrameRGB24& img) { importFrom(img); };
+				void operator << (vipFrameYUV420& img) { importFrom(img); };
+				void operator << (vipFrameT<unsigned char>& img) { importFrom(img); };
+
+
+
+	o	Implement testing code as a simple application, located in your package's
+		folder and named 'test_<classname>.cpp', create Makefile, Borland and Microsoft
+		project files.
+
+
+
+
+
+
+
+
+
+ I Wish include my Package in distribution
+-=========================================
+
+  Great, please contact current administrator, find him on VIPLib website.
+
+  Note: when a package is released, files are moved and integrated into VIPLib Builts,
+  	Authors' credits will be added to ./AUTHORS.
+

@@ -1,0 +1,17 @@
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling i:\Projects\Software\vipPS\help\vipPS.chm
+
+HHC6000: Error: An internal file could not be created. Make certain there is enough disk space on the drive where you are compiling your file.
+HHC5007: Error: Fatal navigational compilation error. This is likely the result of an invalid contents (.hhc) file.
+
+
+The following files were not compiled:
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling i:\Projects\Software\vipPS\help\vipPS.chm
+
+HHC5013: Error: URL reference in the TOC cannot be resolved: "intro.html".
+
+
+The following files were not compiled:

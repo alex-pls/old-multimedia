@@ -1,0 +1,108 @@
+#
+#  VIPLib RESERVED CLASSNAME DATAFILE
+#
+#  Last update:	12/05/2006 17.19
+#
+########################################################################
+#
+#  VIPLib Framework
+#  open source, founded by Alessandro Polo 2006
+#  http://mmlab.science.unitn.it/projects/VIPLib
+#
+#  VIPLib Package Studio
+#  open source, founded by Alessandro Polo 2006
+#  http://mmlab.science.unitn.it/projects/vipPS
+#
+########################################################################
+#
+# The following names are registered and CANNOT be used
+# for any Package / ClassName.
+#
+# You may update this file with last version (should be auto-updated) at
+#
+#   http://mmlab.science.unitn.it/svn/vipPS/trunk/templates/NAMESPACE
+#
+########################################################################
+
+
+vip
+VIP
+ViP
+vIp
+vIP
+viP
+Vip
+
+vipFrame
+vipFrameT
+vipFrameRGB24
+vipFrameRGB96
+vipFrameRGBA32
+vipFrameYUV420
+vipFrameHSV
+vipFrameGrey
+vipFrameRGBETI
+vipFrameGreyETI
+
+vipPin
+vipMatrix
+vipVector
+vipDFMatrix
+vipHist
+vipUtility
+vipThread
+vipProcess
+vipBuffer
+vipBuffer2
+vipBufferArray
+vipBufferLink
+vipBufferSeq
+
+
+vipInput
+vipInput2
+vipOutput
+vipOutput2
+vipFilter
+vipFilter2
+vipVision
+vipVision2
+vipCoder
+vipCoder2
+vipCoder_
+vipCoder_2
+
+vipNoiseGenerator
+vipPlainFrameGenerator
+
+vipVideo4Linux
+vipVideo4Linux2
+vipDirectXInput
+vipDirectXInput2
+vipDXMovieLoader
+vipDXMovieLoader2
+
+vipDoctor
+vipDoctor2
+vipOuputVoid
+vipOuputVoid2
+
+vipWindow32
+vipWindowQT
+vipWindowGTK
+
+vipDigitalFilter
+vipMultiplexer
+vipMultiplexer2
+vipFilterGeometric
+vipFilterNoiseChannel
+
+vipMotionLame
+vipMotionIlluminationInvariant
+
+vipCodec_BMP
+vipCodec_MPEG
+vipCodec_MOV
+vipCodec_XVID
+
+

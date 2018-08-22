@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<LayOut>
+
+	<Style>
+		<MainWindow>
+
+		 <Size width="700" height="500" />
+		 <Position top="10" left="20" />
+		 <Maximized visible="true" />
+
+		</MainWindow>
+
+		<BackGround>
+
+		 <Color Name="" />
+		 <Image Path="bg.default.jpg" />
+
+		</BackGround>
+
+		<ToolBars>
+
+		 <Standard visible="true" />
+		 <StatusBar visible="true">
+
+		</ToolBars>
+
+	</Style>
+
+
+
+
+	<FileHistory>
+
+		<Entry filePath="" Hits=""/>
+
+	</FileHistory>
+
+
+
+
+	<Windows>
+
+		<Window Name="Visualization #1" posX="1000" posY="50" dimX="200" dimY="300">
+
+			<coreType formClass="viewForm" />
+
+		</Window>
+
+	</Windows>
+
+</LayOut>

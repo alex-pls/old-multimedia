@@ -1,0 +1,13 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=vipPS.chm
+Contents file=toc.hhc
+Display compile progress=Yes
+Full-text search=Yes
+Index file=index.hhk
+Language=0x410 Italiano (Italia)
+Title=VIPLib Package Studio
+
+
+[INFOTYPES]
+

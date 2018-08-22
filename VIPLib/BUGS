@@ -1,0 +1,60 @@
+See README for general informations.
+See TODO for more information about VIPLib's future.
+
+
+_______________________________________________________________________
+VIPLib BUGS						    VIPLib BUGS
+
+ This document refers to version 1.1.8-i686-32bit
+ Here is the list of know bugs and errors, please report new bugs.
+
+
+ Known BUGs
+-==========
+ 
+
+	* vipDirectXInput: First captured frame sometimes is black.
+
+	* vipCodec_IMG writing image not implemented.
+
+	* vipCodec_XVID encoding not implemented.
+
+	* vipFilterGeometric implementation is incomplete, although major improvements have been made
+	* vipFilterGeometric resize is very simple. Must implement at least bilinear interpolation
+	* vipThread implementation is incomplete.
+
+	* vipMotionLame implementation is incomplete.
+	* vipMotionIlluminationInvariant implementation is incomplete.
+	
+
+
+
+ NOTEs
+-=====
+
+
+
+
+ I Found another Bug, so what to do?
+-===================================
+
+ Report bug and patch if you resolved the problem to VIPLib Staff.
+ 
+ 	conci@disi.unitn.it
+ 	alessandro.polo@ewgate.net
+ 	piotto@disi.unitn.it
+ 	verza@disi.unitn.it
+
+ Thanks for help!
+
+
+
+
+ I Wrote the patch for a Bug, so what to do?
+-===========================================
+
+ Great, please send the patch to the administrators,
+ we will include in next release and report your credits.
+
+ Thanks for help!
+

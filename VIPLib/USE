@@ -1,0 +1,95 @@
+See README for general informations.
+See COMPILE for building informations.
+
+
+_______________________________________________________________________
+USING VIPLib						   USING VIPLib
+
+  Sample applications and tests are located in ./tests/ directory.
+  Here are listed some simple task which may be easily build with VIPLib:
+
+
+
+ MULTI-PLATFORM
+-==============
+
+	o Use frame objects (data structure)
+		classes: ./source/vipFrame*.h
+
+	o Read/Write any image
+		class: ./source/codecs/vipCodec_BMP.h
+		class: ./source/codecs/vipCodec_RAW.h
+	
+	o Process images
+		classes: ./source/filters/*.h
+
+	o Digital Filtering (lowpass, sobel, ..)
+		class: ./source/filters/vipDigitalFilter.h
+		class: ./source/math/vipDFMatrix.h
+
+	o Motion Estimation related applications
+		classes: ./source/motion/*.h
+
+	o Thread Support
+		class: ./source/vipThread.h
+
+
+
+ LINUX only
+-==========
+
+	o Interface with most capture devices through Video4Linux
+		class: ./source/inputs/vetVideo4Linux.h
+
+	o Show images and videos (QT library)
+		class: ./source/outputs/vetWindowQT.h	
+
+
+ WINDOWS only
+-============
+
+	o Interface with most capture devices through DirectX (DirectShow)
+		class: ./source/inputs/vetDirectXInput.h,
+		class: ./source/inputs/vetDirectXInput2.h
+
+
+
+ SOURCE CODE Hierarchy
+-=====================
+
+  Framework's standard class hierarchy:
+	
+	./source/		Base classes & interfaces
+	./source/buffers/	Buffers utilities
+	./source/codecs/	(de)coders (images and streams)
+	./source/filters/	Filters
+	./source/inputs/	Image/Video data sources
+	./source/libETI/	ETILib support (image, picture)
+	./source/math/		Math functions and utilities
+	./source/network/	Networking related components
+	./source/outputs/	Image/Video data output
+	./source/vision/	Computer Vision and Motion related components
+
+
+
+ STATIC Library
+-==============
+
+  VIPLib binaries are stored in ./lib folder, there is a full built and some
+  special builts (useful for local building), read ./lib/README document
+  for informations about each built and its content.
+  
+  If your interested to compile VIPLib on your system, read ./COMPILE document.
+  
+  You should have a look inside ./tests/Makefile and check projects in ./tests/mvc.
+
+
+
+ LINUX Tips
+-==========
+
+  A very simple compilation command is:
+	
+	g++	myMainApp.cpp ../lib/VIPLib.a -o outputBin.out
+
+  

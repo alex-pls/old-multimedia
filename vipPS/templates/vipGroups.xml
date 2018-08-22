@@ -1,0 +1,113 @@
+<?xml version="1.0" ?>
+<!-- comment -->
+
+
+<vipPkgProjectsGroup>
+
+	<vipPgkProject>
+		<id value="8" />
+		<friendlyName value="Borland C++ Builder 6.0 project" />
+
+		<files>
+		  <file value="test_Template.bpr" friendlyName="BCB project"/>
+		  <file value="test_common.bpf"  friendlyName=""/>
+		</files>
+
+		<os value="WIN" />
+
+		<comment>
+			BCB project for developing/testing Your module.
+		</comment>
+	</vipPgkProject>
+
+	<vipPgkProject>
+		<id value="2" />
+		<friendlyName value="Microsoft Visual C++ 6.0 project" />
+
+		<files>
+		  <file value="test_Template.dsp" friendlyName="VC++ 6 Project"/>
+		  <file value="test_Template.dsw"  friendlyName="VC++ 6 WorkSpace"/>
+		</files>
+
+		<os value="WIN" />
+
+		<comment>
+			MVC project for developing/testing Your module.
+		</comment>
+	</vipPgkProject>
+
+	<vipPgkProject>
+		<id value="4" />
+		<friendlyName value="Microsoft Visual Studio .NET C++ project" />
+
+		<files>
+		  <file value="test_Template.sln" friendlyName="Visual Studio solution"/>
+		  <file value="test_Template.vcproj"  friendlyName="VC++ Project"/>
+		</files>
+
+		<os value="WIN" />
+
+		<comment>
+			MVC project for developing/testing Your module.
+		</comment>
+	</vipPgkProject>
+	
+	
+	<vipPgkProject>
+		<id value="1" />
+		<friendlyName value="NIX Makefile" />
+
+		<files>
+		  <file value="Makefile" friendlyName="Make configuration file"/>
+		</files>
+
+		<os value="LNX" />
+
+		<comment>
+			Make tool's configuration file for developing/testing Your module.
+		</comment>
+	</vipPgkProject>
+
+
+	<vipPgkProject>
+		<id value="16" />
+		<friendlyName value="WorkShop Plugin project" />
+
+		<files>
+		  <file value="ws_plugin.cpp" friendlyName=""/>
+		  <file value="ws_plugin_exp.def" friendlyName=""/>
+		  <file value="ws_plugin_def.h" friendlyName=""/>
+		  <file value="ws_plugin_func.h" friendlyName=""/>
+		  <file value="ws_plugin_src.cpp" friendlyName=""/>
+		  <file value="WS_DLL_13.h"  friendlyName=""/>
+		  <file value="WS_DLL_13.cpp"  friendlyName=""/>
+		  <file value="WS_DLL_13.dsw"  friendlyName=""/>
+		  <file value="WS_DLL_13.dsp"  friendlyName=""/>
+		</files>
+
+		<os value="WIN" />
+
+		<comment>
+			MVC project for building your module as WorkShop plugin (dynamic DLL).
+		</comment>
+	</vipPgkProject>
+
+	<vipPgkProject>
+		<id value="32" />
+		<friendlyName value="Informations" />
+
+		<files>
+		  <file value="Template.License" friendlyName="Project License"/>
+		  <file value="Template.Readme" friendlyName="Project ReadMe"/>
+		</files>
+
+		<os value="ANY" />
+
+		<comment>
+			Some documents to store useful informations about Your project.
+		</comment>
+	</vipPgkProject>
+
+		
+</vipPkgProjectsGroup>
+

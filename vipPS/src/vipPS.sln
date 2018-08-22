@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vipPS", "vipPS.vcproj", "{728AF8F6-3BAB-4628-BCBC-D44B4220B894}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "vipPS_Setup", "vipPS_Setup\vipPS_Setup.vdproj", "{9DFE4FF2-02ED-412F-B8BD-48398C245C47}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{728AF8F6-3BAB-4628-BCBC-D44B4220B894}.Debug.ActiveCfg = Debug|Win32
+		{728AF8F6-3BAB-4628-BCBC-D44B4220B894}.Debug.Build.0 = Debug|Win32
+		{728AF8F6-3BAB-4628-BCBC-D44B4220B894}.Release.ActiveCfg = Release|Win32
+		{728AF8F6-3BAB-4628-BCBC-D44B4220B894}.Release.Build.0 = Release|Win32
+		{9DFE4FF2-02ED-412F-B8BD-48398C245C47}.Debug.ActiveCfg = Debug
+		{9DFE4FF2-02ED-412F-B8BD-48398C245C47}.Debug.Build.0 = Debug
+		{9DFE4FF2-02ED-412F-B8BD-48398C245C47}.Release.ActiveCfg = Release
+		{9DFE4FF2-02ED-412F-B8BD-48398C245C47}.Release.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

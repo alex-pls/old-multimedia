@@ -1,0 +1,344 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1040{\fonttbl{\f0\fswiss\fprq2\fcharset0 Tahoma;}{\f1\fswiss\fcharset0 Arial;}}
+{\colortbl ;\red255\green0\blue0;\red0\green0\blue128;\red0\green0\blue255;}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\cf1\f0\fs32 vipDigitalFilter\cf2 PlugIn\cf1\par
+\cf0\f1\fs20\tab\cf3 version 1.0.2\par
+\cf0\par
+\b\fs22 Using\par
+\b0\fs20 GUI for this plugin has not been implemented jet, probably it will upgrated to plugin system 2.0 (Mixed C and .NET DLL).\par
+\par
+\ul Function Meaning\ulnone :\par
+- if \i clampNegative\i0  is true, negative values are set to 0.\par
+- if \i internalBuffer24Enabled\i0  is true, frame is saved as unsigned char, else as int.\par
+\par
+Function \i setDefaultKernel(int index)\i0  is the only function (now..) which let the user setup kernel matrix data, you may choose a kernel from the list further in this document.\par
+\par
+\par
+\b\fs22 Important Notes\par
+\b0\fs20 WorkShop frame streaming is based on vipFrameCache24, pixel values are quantized in a BAD way.\par
+\par
+\par
+\b\fs22 Documentation\par
+\b0\fs20 Documentation for this module is integrated into VIPLib, you may browse online at http://lnx.ewgate.net/viplib/documentation/html/classvip_digital_filter.html\par
+\par
+\par
+\b\fs22 Default Kernels List\par
+\b0\fs20 These are defined in header ./source/vipDFMatrix.h\par
+Type the integer value as index:\par
+\par
+ vipDF_3x3_average\tab\tab\tab 8700\par
+ vipDF_3x3_mean_removal\tab\tab 8701\par
+ vipDF_3x3_gaussian\tab\tab\tab 8702\par
+ vipDF_3x3_lowpass1\tab\tab\tab 8703\par
+ vipDF_3x3_lowpass2\tab\tab\tab 8704\par
+ vipDF_3x3_lowpass3\tab\tab\tab 8705\par
+ vipDF_3x3_highpass1\tab\tab\tab 8706\par
+ vipDF_3x3_highpass2\tab\tab\tab 8707\par
+ vipDF_3x3_highpass3\tab\tab\tab 8708\par
+ vipDF_3x3_edge_sd_h\tab\tab 8709\par
+ vipDF_3x3_edge_sd_v\tab\tab\tab 8710\par
+ vipDF_3x3_edge_sd_hv\tab\tab 8711\par
+ vipDF_3x3_laplacian1\tab\tab\tab 8712\par
+ vipDF_3x3_laplacian2\tab\tab\tab 8713\par
+ vipDF_3x3_laplacian3\tab\tab\tab 8714\par
+ vipDF_3x3_diagonal\tab\tab\tab 8715\par
+ vipDF_3x3_horizontal\tab\tab\tab 8716\par
+ vipDF_3x3_vertical\tab\tab\tab 8717\par
+ vipDF_3x3_east\tab\tab\tab 8718\par
+ vipDF_3x3_west\tab\tab\tab 8719\par
+ vipDF_3x3_north\tab\tab\tab 8720\par
+ vipDF_3x3_south\tab\tab\tab 8721\par
+ vipDF_3x3_south_east\tab\tab\tab 8722\par
+ vipDF_3x3_south_west\tab\tab 8723\par
+ vipDF_3x3_north_east\tab\tab\tab 8724\par
+ vipDF_3x3_north_west\tab\tab\tab 8725\par
+ vipDF_3x3_sobel_h\tab\tab\tab 8726\par
+ vipDF_3x3_sobel_v\tab\tab\tab 8727\par
+ vipDF_3x3_prewitt_h\tab\tab\tab 8728\par
+ vipDF_3x3_prewitt_v\tab\tab\tab 8729\par
+ vipDF_3x3_emboss_east\tab\tab 8730\par
+ vipDF_3x3_emboss_west\tab\tab 8731\par
+ vipDF_3x3_emboss_south\tab\tab 8732\par
+ vipDF_3x3_emboss_north\tab\tab 8733\par
+ vipDF_3x3_emboss_south_east\tab 8734\par
+ vipDF_3x3_emboss_south_west\tab 8735\par
+ vipDF_3x3_emboss_north_east\tab 8736\par
+ vipDF_3x3_emboss_north_west\tab 8737\par
+\par
+\par
+\b\fs22 Default Kernels Data List\par
+\b0\fs20 Editing this WILL NOT update the real kernel data, they are defined in ./source/filters/vipDigitalFilters.def which is included in ./source/vipDFMatrix.h and used into static vipDFMatrix* createKernel_3x3(int index).\par
+\par
+\par
+////////////////////////////////////////////////////////////////// VARIOUS\par
+\par
+\par
+char average_3x3[] =\tab\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 9\tab\tab\tab\};\par
+\par
+char average_5x5[] =\tab\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, 1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, 1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, 1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, 1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, 1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 25\tab\tab\tab\};\par
+\par
+char mean_removal_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab -1,  9, -1,\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char gaussian_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1, 2, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 2, 4, 2,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 2, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 16\tab\tab\tab\};\par
+\par
+////////////////////////////////////////////////////////////////// LOW PASS MATRIXs\par
+\par
+char lowpass1_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 2, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 10\tab\tab\tab\};\par
+\par
+char lowpass2_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 4, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 12\tab\tab\tab\};\par
+\par
+char lowpass3_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1,  1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 12, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1,  1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 20\tab\tab\tab\};\par
+\par
+\par
+\par
+////////////////////////////////////////////////////////////////// HIGH PASS MATRIXs\par
+\par
+\par
+char highpass1_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab  0, -1,  0,\par
+\tab\tab\tab\tab\tab\tab\tab -1,  5, -1,\par
+\tab\tab\tab\tab\tab\tab\tab  0, -1,  0,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char highpass2_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab  0, -2,  0,\par
+\tab\tab\tab\tab\tab\tab\tab -2,  5, -2,\par
+\tab\tab\tab\tab\tab\tab\tab  0, -2,  0,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char highpass3_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab  0, -1,  0,\par
+\tab\tab\tab\tab\tab\tab\tab -1, 20, -1,\par
+\tab\tab\tab\tab\tab\tab\tab  0, -1,  0,\par
+\tab\tab\tab\tab\tab\tab\tab 16\tab\tab\tab\};\par
+\par
+\par
+////////////////////////////////////////////////// SHIFT & DIFFERENCE EDGE ENHANCEMENT\par
+\par
+\par
+char edge_sd_h_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 0, -1, 0,\par
+\tab\tab\tab\tab\tab\tab\tab 0,  1, 0,\par
+\tab\tab\tab\tab\tab\tab\tab 0,  0, 0,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char edge_sd_v_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab  0, 0, 0,\par
+\tab\tab\tab\tab\tab\tab\tab -1, 1, 0,\par
+\tab\tab\tab\tab\tab\tab\tab  0, 0, 0,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char edge_sd_hv_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab -1, 0, 0,\par
+\tab\tab\tab\tab\tab\tab\tab  0, 1, 0,\par
+\tab\tab\tab\tab\tab\tab\tab  0, 0, 0,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+\par
+///////////////////////////////////////////////////////////////////////// LAPLACIANs\par
+\par
+char laplacian1_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 0, -1, 0,\par
+\tab\tab\tab\tab\tab\tab\tab -1, 4, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 0, -1, 0,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char laplacian2_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab -1,  8, -1,\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+\par
+char laplacian3_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1, -2, 1,\par
+\tab\tab\tab\tab\tab\tab\tab -2, 4, -2,\par
+\tab\tab\tab\tab\tab\tab\tab 1, -2, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+\par
+char diagonal_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab -1, 0, -1,\par
+\tab\tab\tab\tab\tab\tab\tab  0, 4,  0,\par
+\tab\tab\tab\tab\tab\tab\tab -1, 0, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+\par
+char horizontal_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 0, -1, 0,\par
+\tab\tab\tab\tab\tab\tab\tab 0,  2, 0,\par
+\tab\tab\tab\tab\tab\tab\tab 0, -1, 0,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+\par
+char vertical_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab  0, 0,  0,\par
+\tab\tab\tab\tab\tab\tab\tab -1, 2, -1,\par
+\tab\tab\tab\tab\tab\tab\tab  0, 0,  0,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char east_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab -1,  1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab -1, -2, 1,\par
+\tab\tab\tab\tab\tab\tab\tab -1,  1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char west_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1,  1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, -2, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1,  1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char north_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab  1,  1,  1,\par
+\tab\tab\tab\tab\tab\tab\tab  1, -2,  1,\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char south_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab  1, -2,  1,\par
+\tab\tab\tab\tab\tab\tab\tab  1,  1,  1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+\par
+char south_east_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab -1, -2, 1,\par
+\tab\tab\tab\tab\tab\tab\tab  1,  1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+\par
+char south_west_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, -2, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1,  1,  1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+\par
+char north_east_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab  1,  1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab -1, -2, 1,\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+\par
+char north_west_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1,  1,  1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, -2, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+///////////////////////////////////////////////////////////////////////////// SOBEL\par
+\par
+char sobel_h_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab  1,  2,  1,\par
+\tab\tab\tab\tab\tab\tab\tab  0,  0,  0,\par
+\tab\tab\tab\tab\tab\tab\tab -1, -2, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char sobel_v_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1, 0, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 2, 0, -2,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 0, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char prewitt_h_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab  0,  0,  0,\par
+\tab\tab\tab\tab\tab\tab\tab  1,  1,  1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char prewitt_v_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1, 0, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 0, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 0, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+//////////////////////////////////////////////////////////////////////////// EMBOSS\par
+\par
+\par
+char emboss_east_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab -1, 0, 1,\par
+\tab\tab\tab\tab\tab\tab\tab -1, 1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab -1, 0, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char emboss_west_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1, 0, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1, 0, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char emboss_south_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab  0,  1,  0,\par
+\tab\tab\tab\tab\tab\tab\tab  1,  1,  1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char emboss_north_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab  1,  1,  1,\par
+\tab\tab\tab\tab\tab\tab\tab  0,  1,  0,\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char emboss_south_east_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, 0,\par
+\tab\tab\tab\tab\tab\tab\tab -1,  1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab  0,  1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char emboss_south_west_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 0, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1,  1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1,  1,  0,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char emboss_north_east_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab  0,  1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab -1,  1, 1,\par
+\tab\tab\tab\tab\tab\tab\tab -1, -1, 0,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+char emboss_north_west_3x3[] =\tab\{\par
+\tab\tab\tab\tab\tab\tab\tab 1,  1,  0,\par
+\tab\tab\tab\tab\tab\tab\tab 1,  1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 0, -1, -1,\par
+\tab\tab\tab\tab\tab\tab\tab 1\tab\tab\tab\};\par
+\par
+\par
+\par
+\b\fs22 License\par
+\b0\fs20 VIPLib Module, Copyright Alessandro Polo 2006, open source project.\par
+\par
+}
+ 
